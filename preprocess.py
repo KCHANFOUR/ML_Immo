@@ -10,7 +10,7 @@ import seaborn as sns
 
 # Paris Housing Prices
 
-full_df = pd.read_csv("ParisHousing.csv")
+full_df = pd.read_csv("datasets/ParisHousing.csv")
 
 # California Housing Prices
 
@@ -64,17 +64,18 @@ def segmentation (data,features_list):
 
 
 
-dataset,categorical = segmentation(df,features)
-numerized_dataset = dummies(dataset,categorical)
-dataset = missing_data(numerized_dataset)
 
-
-
-X,y = pre_processing(dataset)
-X_transform = normalization(X)
-
-
-sns.heatmap
-
-X_train, X_test, y_train, y_test = train_test_split(X_transform, y, test_size = 0.2, random_state=42)
+if __name__ == "__main__":
+    
+    dataset,categorical = segmentation(df,features)
+    numerized_dataset = dummies(dataset,categorical)
+    dataset = missing_data(numerized_dataset)
+    
+    X,y = pre_processing(dataset)
+    X_transform = normalization(X)
+    
+    
+    sns.heatmap
+    
+    X_train, X_test, y_train, y_test = train_test_split(X_transform, y, test_size = 0.2, random_state=42)
 
