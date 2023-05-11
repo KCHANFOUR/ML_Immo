@@ -12,6 +12,9 @@ from sklearn.ensemble import RandomForestRegressor
 
 from preprocess import X_train, X_test, y_train, y_test,X_transform,y
 
+if __name__=="__main__":
+    
+    print("Comparatif des modèles")
 # Linear Regression model
 
 reg_all = LinearRegression()
@@ -122,6 +125,3 @@ print("Cross validation score for Random forest regressor model : " + str(np.mea
     
 print("MSLE function for Random forest regressor model : " + str(mean_squared_log_error(y_test, rf_pred)) + "\n" )
 
-if __name__=="__main__":
-    
-    print("Comparatif des modèles")
