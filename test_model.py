@@ -12,6 +12,9 @@ from sklearn.ensemble import RandomForestRegressor
 
 from preprocess import X_train, X_test, y_train, y_test,X_transform,y
 
+def model():
+    
+
 if __name__=="__main__":
     
     print("Comparatif des modèles")
