@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Enter Data</title>
+    <title>Données</title>
   </head>
   <body>
     <h1>Enter Data</h1>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name"><br>
+    <form method="POST" action="{{ url_for('submit_form') }}">
+      <label for="squareMeters">Nombre de mètres carrés:</label>
+      <input type="number" id="squareMeters" name="squareMeters"><br>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br>
+      <label for="numberOfRooms">Nombre de pièces:</label>
+      <input type="number" id="numberOfRooms" name="numberOfRooms"><br>
 
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone"><br>
+      <label for="floors">Nombre d'étages':</label>
+      <input type="num" id="floors" name="floors"><br>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message"></textarea><br>
+      <label for="cityCode">Code municipal:</label>
+      <input type="text" id="cityCode" name="cityCode"><br>
+
+      <label for="cityPartRange">CityPartRange:</label>
+      <input type="num" id="cityPartRange" name="cityPartRange"><br>
+
+      <label for="numPrevOwners">Nombre de bailleur précédent:</label>
+      <input type="num" id="numPrevOwners" name="numPrevOwners"><br>
+
+      <label for="made">Nombre de bailleur précédent:</label>
+      <input type="date" id="made" name="made"><br>
+
+      <label for="basement">mètre carré du rez-de-chaussée:</label>
+      <input type="num" id="basement" name="basement"><br>
+
+      <label for="attic">Mètre carré du grenier:</label>
+      <input type="num" id="attic" name="attic"><br>
+
+      <label for="garage">Mètre carré du garage:</label>
+      <input type="num" id="garage" name="garage"><br>
 
       <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
     </form>
   </body>
 </html>
