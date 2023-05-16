@@ -15,7 +15,7 @@ from preprocess import X_train, X_test, y_train, y_test,X_transform,y
 def model(X):
     lr = LinearRegression()
     lr.fit(X_train, y_train)
-    return reg_all.predict(X)
+    return lr.predict(X)
 
 
 if __name__=="__main__":
