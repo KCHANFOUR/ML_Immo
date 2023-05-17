@@ -20,7 +20,7 @@ def submit_form():
     data = np.array(X,dtype=float)
     data = data.reshape(1,-1)
     predicted_price = test_model.model(data)
-    return f'THERESULT PREDICTED BY APP: {predicted_price} €'
+    return f'THERESULT PREDICTED BY APP: {predicted_price[0]} €'
 
 
 if __name__ == '__main__':
