@@ -17,7 +17,7 @@ def model(X):
     lr.fit(X_train, y_train)
     return lr.predict(X)
 
-
+#AJOUTER LE CHOIX DE MODELE
 if __name__=="__main__":
     
     print("Comparatif des modèles")
