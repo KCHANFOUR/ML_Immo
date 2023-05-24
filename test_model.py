@@ -12,10 +12,29 @@ from sklearn.ensemble import RandomForestRegressor
 
 from preprocess import X_train, X_test, y_train, y_test,X_transform,y
 
-def model(X):
+def model_lin(X):
     lr = LinearRegression()
     lr.fit(X_train, y_train)
     return lr.predict(X)
+
+def model_randF(X):
+    rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
+    rf.fit(X_train, y_train)
+    return rf.predict(X)
+
+def model_ridge(X):
+    ridge = make_pipeline(preprocessing.StandardScaler(with_mean=False), Ridge())
+    ridge.fit(X_train, y_train)
+    return ridge.predict(X)
+
+
+def model_lasso(X):
+    lasso = make_pipeline(preprocessing.StandardScaler(with_mean=False), Lasso())
+    lasso.fit(X_train, y_train)
+    return lasso.predict(X)
+
+
+
 
 
 if __name__=="__main__":
@@ -114,7 +133,7 @@ if __name__=="__main__":
     
     rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
     rf.fit(X_train, y_train)
-    rf_pred = dt.predict(X_test)
+    rf_pred = rf.predict(X_test)
     
     # Metrics and Scoring
         
