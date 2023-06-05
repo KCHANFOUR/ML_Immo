@@ -17,6 +17,7 @@ def model_lin(X):
     lr.fit(X_train, y_train)
     return lr.predict(X)
 
+<<<<<<< HEAD
 def model_randF(X):
     rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
     rf.fit(X_train, y_train)
@@ -37,6 +38,9 @@ def model_lasso(X):
 
 
 
+=======
+#AJOUTER LE CHOIX DE MODELE
+>>>>>>> main
 if __name__=="__main__":
     
     print("Comparatif des modèles")
