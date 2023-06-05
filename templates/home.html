@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prédicteur de prix immobilier avec l'apprentissage automatique</title>
+  <title>Prédicteur de prix immobilier avec la régression linéaire</title>
   <style>
     body {
       margin: 0;
@@ -9,7 +9,7 @@
     }
     
     .header {
-      background-color: blue;
+      background-color: #004C99;
       color: white;
       padding: 10px;
       text-align: center;
@@ -19,60 +19,92 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      
-      
+    }
+    
+    .form-container {
+      width: 400px; 
+      margin: 0 auto; 
+      text-align: center; 
+    }
+    
+    .form-group {
+      margin-bottom: 20px; 
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 10px; 
+    }
+    .form-group input[type="submit"] {
+      width: auto;
+      padding: 10px 20px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Prédicteur de prix immobilier avec l'apprentissage automatique</h1>
-  </div>
-  <div class="content">
-    <label for="location">Sélectionnez une localisation :</label>
-    <select id="location" name="location">
-      <option value="paris">Paris</option>
-      <option value="marseille">Marseille</option>
-      <option value="lyon">Lyon</option>
-      <option value="bordeaux">Bordeaux</option>
+    <div class="header">
+        <h1>Prédicteur de prix immobilier avec l'apprentissage automatique</h1>
+    </div>
+    <div class="content">
+        <label for="location">Sélectionnez une localisation :</label>
+        <select id="location" name="location">
+            <option value="paris">Paris</option>
+            <option value="marseille">Marseille</option>
+            <option value="lyon">Lyon</option>
+            <option value="bordeaux">Bordeaux</option>
       <!-- Add more options as needed -->
-    </select>
+        </select>
+    </div>
+    <div class="form-container">
+        <form method="POST" action="{{ url_for('submit_form') }}">
+            <div class="form-group">
+                <label for="squareMeters">Nombre de mètres carrés:</label>
+                <input type="number" id="squareMeters" name="squareMeters"><br>
+            </div>
+            <div class="form-group">
+                <label for="numberOfRooms">Nombre de pièces:</label>
+                <input type="number" id="numberOfRooms" name="numberOfRooms"><br>
+            </div>
+            <div class="form-group">
+                <label for="floors">Nombre d'étages':</label>
+                <input type="num" id="floors" name="floors"><br>
+            </div>
+            <div class="form-group">
+                <label for="cityCode">Code municipal:</label>
+                <input type="text" id="cityCode" name="cityCode"><br>
+            </div>
+            <div class="form-group">
+                <label for="cityPartRange">CityPartRange:</label>
+                <input type="num" id="cityPartRange" name="cityPartRange"><br>
+            </div>
+            <div class="form-group">
+                <label for="numPrevOwners">Nombre de bailleur précédent:</label>
+                <input type="num" id="numPrevOwners" name="numPrevOwners"><br>
+            </div>
+            <div class="form-group">
+                <label for="made">Année de fabrication:</label>
+                <input type="number" id="made" name="made" min="1900" max="2099" step="1" value="2005"><br>
+            </div>
+            <div class="form-group">
+                <label for="basement">mètre carré du rez-de-chaussée:</label>
+                <input type="num" id="basement" name="basement"><br>
+            </div>
+            <div class="form-group">
+                <label for="attic">Mètre carré du grenier:</label>
+                <input type="num" id="attic" name="attic"><br>
+            </div>
+            <div class="form-group">               
+                <label for="garage">Mètre carré du garage:</label>
+                <input type="num" id="garage" name="garage"><br>
+            </div>
+            <div class="form-group">               
+                <input type="submit" value="Submit"><br>
+                <input type="reset" value="Reset">
+            </div>
+            
+        </form>
   </div>
-  <form method="POST" action="{{ url_for('submit_form') }}">
-    <label for="squareMeters">Nombre de mètres carrés:</label>
-    <input type="number" id="squareMeters" name="squareMeters"><br>
-
-    <label for="numberOfRooms">Nombre de pièces:</label>
-    <input type="number" id="numberOfRooms" name="numberOfRooms"><br>
-
-    <label for="floors">Nombre d'étages':</label>
-    <input type="num" id="floors" name="floors"><br>
-
-    <label for="cityCode">Code municipal:</label>
-    <input type="text" id="cityCode" name="cityCode"><br>
-
-    <label for="cityPartRange">CityPartRange:</label>
-    <input type="num" id="cityPartRange" name="cityPartRange"><br>
-
-    <label for="numPrevOwners">Nombre de bailleur précédent:</label>
-    <input type="num" id="numPrevOwners" name="numPrevOwners"><br>
-
-    <label for="made">Année de fabrication:</label>
-    <input type="number" id="made" name="made" min="1900" max="2099" step="1" value="2016"><br>
-
-
-    <label for="basement">mètre carré du rez-de-chaussée:</label>
-    <input type="num" id="basement" name="basement"><br>
-
-    <label for="attic">Mètre carré du grenier:</label>
-    <input type="num" id="attic" name="attic"><br>
-
-    <label for="garage">Mètre carré du garage:</label>
-    <input type="num" id="garage" name="garage"><br>
-
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-  </form>
   <!-- Rest of your content here -->
   
 </body>
