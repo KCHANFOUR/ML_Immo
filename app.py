@@ -21,7 +21,8 @@ def submit_form():
     data = data.reshape(1,-1)
     predicted_price = test_model.model(data)
     print(data)
-    return f'THERESULT PREDICTED BY APP: {predicted_price[0]} and the data are : {data} €'
+    print(type(predicted_price[0]))
+    return render_template('result.html',param1=predicted_price[0])
 
 
 if __name__ == '__main__':

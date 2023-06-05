@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prédicteur de prix immobilier avec la régression linéaire</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header {
+      background-color: #004C99;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .sentence {
+        color: #004C99;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .price {
+     color: black;
+     text-align: center;
+     padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Prédicteur de prix immobilier avec la régression linéaire</h1>
+    </div>
+    <div class="sentence">
+        <h2>Selon vos paramètres nous estimons votre bien à :</h2>
+    </div>
+    <div class="price">
+        <h2>{{param1.item()|float|round(4)}} €</h2>
+    </div>
+    <div class="sentence">
+        <h2>A bientot</h2>
+    </div>
+</body>
+</html>
