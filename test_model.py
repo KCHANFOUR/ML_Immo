@@ -114,7 +114,7 @@ if __name__=="__main__":
     
     rf = RandomForestRegressor(n_estimators = 1000, random_state = 42)
     rf.fit(X_train, y_train)
-    rf_pred = dt.predict(X_test)
+    rf_pred = rf.predict(X_test)
     
     # Metrics and Scoring
         
